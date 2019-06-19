@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+
+       xmlns:context="http://www.springframework.org/schema/context"
+
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+
+        http://www.springframework.org/schema/mvc
+
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+
+        http://www.springframework.org/schema/context
+
+        http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
+
+    <!-- thiet ke repositort -->
+
+   <jpa:repositories base-package="com.teamword.repository" />
+
+    <bean name="giuongbenhService" class="com.teamword.service.GiuongbenhService" />
+
+    <bean name="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
+
+
+    <bean name="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="packagesToScan" value="com.teamword"/>
+        <property name="jpaVendorAdapter">
+            <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+        </property>
+       <!-- <property  name="generateDdl" value="true" /> -->
+    </bean>
+
+    <bean id="dataSourcejpa" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:33061/springmvc" />
+        <property name="username" value="root" />
+        <property name="password" value="ledang" />
+    </bean>
+
+
+    <!-- 111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111 -->
+
+
+    <!-- name , class tạo ra đối tượng gbDao  và lớp tạo ra đối tượng  GiuongbenhLmpl-->
+    <bean name="gbDao" class="com.teamword.dao.Giuongbenhlmpl" >
+        <!-- Tao đối tương phụ thuộc theo các setter injection / điều kiện đối tượng đã khỏi tạp hàm set() trong class của đối
+        tượng được khỏi tạo từ bean trong spring contrainer-->
+        <property name="sessionFactory" ref="sessionFactory"> </property>
+    </bean>
+
+
+    <!-- name , class tạo ra đối tượng sessionFactory  và lớp tạo ra đối tượng LocalSessionFactoryBean -->
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+    <property name ="dataSource" ref="dataSource" />
+    <!--
+        <property name="configLocation">
+            <value>classpath:mapping-loaigiuongbenh</value>
+        </property>
+    -->
+    <property name="annotatedClasses">
+        <list>
+            <value>com.teamword.model.Giuongbenh</value>
+        </list>
+    </property>
+
+     <!--   <property name="packagesToScan" value="com.teamword.model" /> -->
+
+        <property name="hibernateProperties">
+            <!-- xác định phạm vi đã định nghĩa trong bean -->
+            <props>
+                <!-- khai báo hibernate kết nối bằng phương thức nào  -->
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <!-- cho phép lấy phiên làm việc session mà ko cần open hay close session -->
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <!-- thêm vào 4h 10p -->
+                <prop key="hibernate.show_sql">true</prop>
+
+                <prop key="hibernate.format_sql">true</prop>
+
+            </props>
+
+        </property>
+
+        <!-- moi them 4h thu3 ngay 4 thang 6 -->
+    </bean>
+
+    <!-- thực tạo đối tượng dataSource kết nối đến database công ty, class mặc định spring -->
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://10.82.33.223:3306/springmvc" />
+        <property name="username" value="interns" />
+        <property name="password" value="abcd@1234" />
+    </bean>
+
+    <!-- thực tạo đối tượng dataSource kết nối đến database localhost, class mặc định spring -->
+    <bean id="dataSourceLocal" class="org.springframework.jdbc.datasource.DriverManagerDataSource" >
+       <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:33061/springmvc" />
+        <property name="username" value="root" />
+        <property name="password" value="ledang" />
+    </bean>
+
+
+
+</beans>

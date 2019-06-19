@@ -1,0 +1,367 @@
+
+body{
+    margin:0px;
+    padding:0px;
+    font-family: Arial, sans-serif;
+    font-size : 16px;
+}
+
+#body_content{
+    width: 100%;
+    height: 100%;
+}
+
+#wrap {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("http://localhost:8080/test_war_exploded/resources/images/bg_wrap.png");
+    background-repeat: round;
+}
+
+#banner {
+    margin: 0px auto;
+    width: 1200px;
+    height: 100px;
+    background-color: #015d9c;
+    position: relative;
+    z-index: 3;
+    box-sizing: border-box;
+
+}
+#banner #logo {
+    display: block;
+    margin: 0px;
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    top: calc(50px - 37.5px);
+    left: 25px;
+}
+
+#banner #text_banner {
+    text-align: center;
+    margin: 0px;
+    height: 75px;
+    position: absolute;
+    top: calc(50px - 37.5px);
+    left: 90px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+#banner #text_banner h4, h6 {
+    display: block;
+    margin: 0px;
+    line-height: 25px;
+}
+#banner #text_banner h4 {
+    color: white;
+}
+
+#banner #text_banner h6 {
+    color: yellow;
+    /*font-size: 20px; */
+}
+
+#account{
+    position:absolute;
+    top:25px;
+    right:50px;
+    color:white;
+}
+
+
+#account ul{
+    list-style-type:none;
+    margin:-11px;
+    position:relative;
+}
+#account ul li > ul{
+    position:absolute;
+    display:none;
+}
+#account ul li > ul li{
+    width:145px;
+    display:block;
+    border:none;
+    background-color:#EEEEE0;
+    color:black;
+    line-height:30px;
+    padding:5px;
+}
+#account:hover ul li > ul {
+    display:block;
+}
+#account:hover{
+    background-color:#06C;
+    border:2px solid #03C;
+    border-radius:10px;
+    padding:5px;
+}
+#account ul li > ul li:hover{
+    background-color:gray;
+    color:white;
+}
+
+
+
+
+#Content_form{
+    height: calc(100% - 100px);
+    width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    position: relative;
+    z-index:1;
+}
+
+#Content_form #info_user {
+    width: auto;
+    height: 50px;
+    background-color: rgba(240,240,240,0.7);
+
+}
+
+#Content_form #search_code_user {
+    width: 595px;
+    height: 50px;
+    margin: 20px;
+    margin-left: 220px;
+    /*border: 1px solid #015d9c;*/
+    border-radius: 5px;
+    background-color: rgba(240,240,240,0.7);
+}
+
+#Content_form #search_name_mailbox {
+    width: 595px;
+    height: 50px;
+    margin: 20px 20px;
+    border: 1px solid #015d9c;
+    border-radius: 10px;
+    background-color: rgba(240,240,240,0.7);
+}
+#btnsearch{
+    margin: 0px ;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 80px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 10px;
+
+}
+#txtsearch{
+    text-align: left;
+    width: 500px;
+    border: 1px solid #1c8adb;
+    height: 40px;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+    background:transparent;
+    border-radius: 10px;
+    margin: 5px 0px 5px 5px ;
+    background-image: url('https://png.icons8.com/office/40/000000/search.png');
+    background-repeat: no-repeat;
+    padding: 0px 50px;
+
+}
+
+
+#announce{
+    width: auto;
+    height: 50px;
+    margin: 20px 20px;
+    border: 1px solid #015d9c;
+    border-radius: 10px;
+    background-color:#70dae6;
+    /*background-color: rgba(240,240,240,0.7); */
+}
+
+#txtAnnounce {
+    text-align: left;
+    width: 1140px;
+    border: 1px solid #1c8adb;
+    height: 40px;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+    background:transparent;
+    margin:5px 10px;
+    border: 0px;
+}
+#Sys_management_mailbox_header {
+    box-sizing: border-box;
+    margin: 20px 0px 0px;
+    height: 40px;
+    padding: 10px 0px;
+    border-top: 5px solid blue;
+    color: blue;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+#Sys_management_mailbox_body {
+    box-sizing: border-box;
+    height: 400px;
+    margin: 5px 10px;
+    border-top: 2px  dashed blue;
+    padding: 10px;
+
+}
+#Sys_management_mailbox_body #Sys_management_mailbox_body_left {
+    width: 600px;
+    box-sizing: border-box;
+    padding: 0px ;
+    margin: 20px;
+}
+
+#Sys_management_mailbox_body_left button {
+    margin: 10px 5px 0px;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 220px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+
+#Sys_management_mailbox_body #Sys_management_mailbox_body_right{
+    width: 100%;
+    height: 250px;
+    margin: 0px;
+    padding: 0px;
+}
+#table_info{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+
+}
+#table_info th, td {
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#table_info tr:nth-child(even){background-color: #f2f2f2}
+
+.a_control {
+    margin-left: 20px;
+    width: auto;
+}
+
+.a_control a{
+    display:inline-block;
+    background: white;
+    color:black;
+    text-decoration: none;
+    margin: 5px;
+    padding: 2px;
+    /*width: 200px;*/
+    font-size: 18px;
+    border-radius: 4px;
+    border: 1px solid;
+}
+
+#Sys_management_mailbox_body #tab_table {
+    width: 1000px;
+    box-sizing: border-box;
+    padding: 0px ;
+    margin: 20px;
+    height: 50px;
+}
+#tab_table .btn_tab_table {
+    margin: 0px;
+    padding: 0px;
+    height: 50px;
+    width: auto;
+    background: red;
+    color: black;
+    font-size: 16px;
+    /*border-radius: 4px;*/
+}
+
+/* Cap nhat hop thu ca nhan*/
+.form_hide{
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    border: none;
+    position: absolute;
+    z-index:99;
+    display: none;
+}
+
+#content_body
+{
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    height: auto;
+    margin: 20px;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color:white;
+    border-radius: 50px;
+}
+
+#content_body h1{
+    color: blue;
+}
+
+#div_h1 {
+    text-align: center;
+    margin: 5px ;
+    padding:0px;
+}
+
+#info_user {
+    margin:0px auto;
+    width: 80%;
+    padding: 0px;
+}
+
+
+#info_user td {
+    padding: 10px;
+    text-align:left;
+}
+
+#info_user .txt_hide {
+    width: 90%;
+    border: 1px solid #1c8adb;
+    height: 25px;
+    font-size: 16px;
+    padding: 0px;
+    outline: none;
+    background:transparent;
+    border-radius: 4px;
+    margin:0px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+}
+.btn_hide{
+    margin: 10px;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 120px;
+    background: #1c8adb;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.btn_hide:hover {
+    cursor: pointer;
+    background: #39dc79;
+    color: #000;
+}
